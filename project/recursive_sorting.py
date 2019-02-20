@@ -62,37 +62,40 @@ def merge_sort_in_place(arr, l, r):
 #          high - count: 9, i: 17
 #           high - count: 8, i: 18
 ###[12, 3, 1, 9, 7, 6, 8, 15, 13, 16, 16, 14, 12, 17, 10, 18, 5, 3, 3, 20]
-a = [12, 3, 1, 9, 7, 20, 8, 16, 16, 14, 3, 13, 17, 10, 18, 5, 3, 12, 15, 6]
+# a = [12, 3, 1, 9, 7, 20, 8, 16, 16, 14, 3, 13, 17, 10, 18, 5, 3, 12, 15, 6]
+a = [3, 5, 8, 4, 2, 9, 6, 0, 1, 7]
+
+
 # print(len(a))
 # TO-DO: implement the Quick Sort function below USING RECURSION
 def quick_sort( arr, low, high ):
     # low and high point at the start and end of the array
-    # low = 0
-    # high = len(arr)
-    pivot = 0
-    count = 0
+    pivot = high
+    count = low
 
     if low < high:
         for i in range(low, high):
-            if arr[i] > arr[pivot]:
-                a = arr[i]
-                # high len(arr) - 1
-                b = arr[high - count]
-                arr[i], arr[high - count] = b, a
-                count += 1
-                print(f" high - count: {high - count}, i: {i}")
-        pivot = arr[high - count]
-        x = arr[pivot]
-        y = arr[high - count]
-        arr[pivot], arr[high - count] = y, x
-        # else:
-        #     a = arr[i]
-        #     b = arr[low]
-        #     arr[i], arr[low] = b, a
-    # Quick_sort recursion goes here. Deincrementing the high and low
+            if arr[i] < arr[pivot]:
+                # swap
+                # if the array index is smaller than the pivot. We move the array index value to the beginning of the arrayj;w
 
-        # quick_sort(arr, low, high - count - 1 )
-        # quick_sort(arr, high - count + 1, high)
+                a = arr[i]
+                b = arr[count]
+                arr[i],  arr[count] = b, a
+                # we never want to touch 0 again
+                count += 1
+
+                # print(f"arr: {arr}, lo: {low}, hi: {high}, count: {count} index: {i}")
+                # print(f" high - count: {high - count}, i: {i}")
+        # we switch the pivot and the count, then evertthing on the left is lower than the pivot. On the right it is higher.
+        x = arr[pivot]
+        y = arr[count]
+
+# a = [3, 5, 8, 4, 2, 9, 6, 0, 1, 7]
+        arr[pivot], arr[count] = y, x
+        print(f"array: {arr}")
+        quick_sort(arr, count + 1, high)
+        quick_sort(arr, low, count - 1)
     return arr
 
     # While high and low are greater than one
@@ -115,7 +118,7 @@ def quick_sort( arr, low, high ):
     # print(low)
     # print(high)
 
-print(quick_sort(a, 0, len(a) -1))
+print(quick_sort(a, 0, len(a) - 1))
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
 def timsort( arr ):
