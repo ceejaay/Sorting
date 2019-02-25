@@ -67,10 +67,15 @@ def insertion_sort( arr ):
 
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort( arr ):
-    pass
-
-    # return arr
-
+    sorting = True
+    while sorting:
+        sorting = False
+        for i in range(1, len(arr)):
+            if arr[i - 1] > arr[i]:
+                arr[i - 1], arr[i] = arr[i], arr[i - 1]
+                sorting = True
+    return arr
+print(bubble_sort(a))
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
