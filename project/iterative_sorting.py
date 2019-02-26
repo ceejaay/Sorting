@@ -19,7 +19,28 @@ def selection_sort( arr ):
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort(arr):
+    # for item in range(1, len(arr)):
+    #     temp = arr[0]
+    #     while item > 0 and arr[]
+    # When we go through the while loop. How do we know to stop? 
+    # We know that we stop when we are going forward in the for loop.
+    # We know that we need to stop teh while loop when teh item on the left is smaller than the temp item.
+    # While the temp item is greater than zero. We keep moving do this.
+
+    # Then the temp item is changed to the the next item in the for loop.
+    # temp = arr[1]
+    # for item in range(1, len(arr)):
+    #     while temp < arr[item]:
+    #         arr[item] = arr[item + 1]
+    
+
+
+
+
+
+
     # We set the first item in the array as sorted.
+
             # We check the temp agains the neighbor to it's left.
             # if temp is larger. Leave it there.
             # # While the temp variable is larger than it's neighbor we leave it there. then we go to the next item in the array.
