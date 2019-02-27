@@ -12,13 +12,26 @@
 
 import random
 def selection_sort( arr ):
-    return arr
+    pass
+    # return arr
 
 
 # print(selection_sort(a))
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort(arr):
+    flag = len(arr) - 1
+    for i in range(1, len(arr)):
+        while arr[flag] > arr[flag]:
+            print('flag', flag)
+            flag -= 1
+    # for i in range(1, len(arr)):
+    #     while flag < 0:
+    #         print('flag', flag)
+    #         flag -= 1
+            # check values
+
+
     # for item in range(1, len(arr)):
     #     temp = arr[0]
     #     while item > 0 and arr[]
@@ -32,10 +45,12 @@ def insertion_sort(arr):
     # for item in range(1, len(arr)):
     #     while temp < arr[item]:
     #         arr[item] = arr[item + 1]
+    print('original array: ', [3, 1, 6, 0])
+    return arr
     
 
 
-
+print(insertion_sort([3, 1, 6, 0]))
 
 
 
@@ -65,7 +80,6 @@ def insertion_sort(arr):
 
 
 
-    return arr
 
 # import random
 

@@ -4,14 +4,19 @@ def merge(arrA, arrB):
     # we create a new array with zeros in it
     merged_arr = [0] * new_length
     # we set up some pointers.
+    # These pointers point to the next item in the array
+    # If there is only one item in the array, then ????
     a = 0
     b = 0
     # then we loop through 0 to the length of the new array
     for i in range(0, new_length):
+
         # if a is greater than or equal to the length of arrA. then we merge in the 0 index element from the B array. 
         #     the value of a  is zero on the first pass
         if a >= len(arrA):
             merged_arr[i] = arrB[b]
+            print('merged array: a >= len(arrA)', merged_arr)
+
             # we then increment b by one. So it will go to the next element in the b array
             b += 1
             # here we check to see if b is greater than or equal to  the length of the b array. 
@@ -20,6 +25,7 @@ def merge(arrA, arrB):
         elif b >= len(arrB):
             # if b is greater or equal. We merge arrB at index B into the merged_arr
             merged_arr[i] = arrA[a]
+            print('merged array: b >= len(arrB)', merged_arr)
             # then we increment a by one 
             a += 1
             # here's where we compare the values if the array's are full of elements
@@ -34,6 +40,8 @@ def merge(arrA, arrB):
             merged_arr[i] = arrB[b]
             # then increment b
             # not sure what's going on here
+            # I think we are incrementing one.
+            # Then if it's greater than the length, we are done?
             b += 1
 
     # 1. if all the elements from array A have been merged.
